@@ -1,4 +1,7 @@
 svelte-basico/node_modules/
 svelte-basico/public/build/
 
+componentes/node_modules/
+componentes/public/build/
+
 .DS_Store
