@@ -1,3 +1,8 @@
-<nav class="navbar navbar-light bg-primary">
-    <span class="navbar-brand mb-0 h1">Componentes</span>
+<script>
+    export let color;
+    export let titulo;
+</script>
+
+<nav class="navbar navbar-{color} bg-{color}">
+    <span class="navbar-brand mb-0 h1">{titulo}</span>
 </nav>
