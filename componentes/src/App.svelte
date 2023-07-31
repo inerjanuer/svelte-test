@@ -2,12 +2,15 @@
 	import Header from "./Desing/Header.svelte";
 	import CardGrid from "./Posts/CardGrid.svelte";
 	import InputCustom from "./Desing/InputCustom.svelte";
+	import Jumbotron from "./Desing/Jumbotron.svelte";
 
 	const color = "danger"
 
 	let titulo = ''
 	let descripcion= ''
 	let imagen = ''
+
+	let show = false
 
 	let posts = [
 		{
@@ -45,6 +48,29 @@
 <Header {color} titulo="Componentes"/>
 
 <div class="container">
+
+	Mostrar Jumbotron <input type="checkbox" bind:checked={show}>
+
+	{#if show}
+	<Jumbotron nombre="Mis Componentes" let:mostrar={mostrar}>
+		<span slot="subtitulo">
+			Curso de svelte
+		</span>
+		<span slot="parrafo">
+			Contenido del curso en un parrafo.
+		</span>
+		<div class:mostrar>
+			{#if mostrar}
+			<hr/>
+			<button class="btn btn-danger">Boton</button>
+			{:else}
+				<h2>Colocoa el mouse encima</h2>
+			{/if}
+		</div>
+	</Jumbotron>
+	{/if}
+	
+
 	<CardGrid {posts}/>	
 
 	<form on:submit|preventDefault={agregarPost}>
